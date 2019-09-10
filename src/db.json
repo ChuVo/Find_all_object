@@ -1,0 +1,21 @@
+{
+  "balerina": {
+    "id": "balerina",
+    "src": "images/appel.png"
+  },
+
+  "mirror": {
+    "id": "mirror",
+    "src": "images/mirror.png"
+  },
+
+  "perfume": {
+    "id": "perfume",
+    "src": "images/perfume.png"
+  },
+
+  "comb": {
+    "id": "comb",
+    "src": "images/comb.png"
+  }  
+}

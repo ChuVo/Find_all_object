@@ -1,0 +1,11 @@
+@font-face {
+	font-family: FrizQuadrata;
+	src: local("FrizQuadrata"),
+	url(../fonts/FrizQuadrata.ttf);
+}
+
+@font-face {
+	font-family: AlbertusMedium;
+	src: local("AlbertusMedium"),
+	url(../fonts/AlbertusMedium.ttf);
+}

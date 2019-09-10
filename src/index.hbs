@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" name="viewport" content="initial-scale=1.0, width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="browser game, game find all hidden object, js game, javascript game">
+  <meta name="description" content='Game "Find all hidden object"'>
+  <meta property="og:title" content="Find all hidden object">
+  <meta property="og:url" content="http://crazysouslik.pro/"/>
+  <meta property="og:image"content="../images/CrazySouslik.png"/>
+  <meta property="og:image:width" content="600"/>
+  <meta property="og:image:height" content="300"/>  
+  <link rel="stylesheet" href="styles/index.min.css">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <title>Find all hidden object</title>
+</head>
+<body>
+  {{> spiner}}
+  <div class="content">
+    <div class="bg"></div>  
+    {{> objects}}
+    {{> gui}}    
+    {{> win}}
+  </div>
+
+  
+  <div class="sound-box">
+    <div class="sound"></div>
+    <div class="music"></div>
+  </div>
+  
+  <script type="text/javascript" src="scripts/index.min.js"></script>
+</body>
+</html>

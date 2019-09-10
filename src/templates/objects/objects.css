@@ -79,3 +79,74 @@
   transition: 1.5s;
   left: 80%;
 }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  #mirror,
+  .mirror {
+    left: 14%;
+    top: 44%;
+  }
+
+  #balerina,
+  .balerina {
+    left: 55.5%;
+    top: 50.5%;
+  }
+
+  #perfume,
+  .perfume {
+    left: 23%;
+    top: 68%;
+    transform: translate(-50%, -50%) rotate(20deg);
+  }
+
+  #comb,
+  .comb {
+    right: 5%;
+    top: 55%;
+    transform: translate(-50%,-50%) rotate(30deg) scale(.6);
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1366px) and (orientation : landscape) {
+  #mirror,
+  .mirror {
+    left: 15%;
+    top: 44%;
+  }
+
+  #balerina,
+  .balerina {
+    top: 51%;
+  }
+
+  #perfume,
+  .perfume {
+    left: 23%;
+    top: 68%;
+  }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px) {
+  #balerina,
+  .balerina {
+    top: 49%;
+  }
+
+  #mirror,
+  .mirror {
+    top: 42%;  
+  }
+
+  #perfume,
+  .perfume {
+    top: 68%;
+  }
+
+  #comb,
+  .comb {
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(30deg) scale(.6);
+  } 
+}

@@ -9,3 +9,9 @@
     filter: saturate(150%);
   }
 }
+
+@keyframes light {
+  from{
+    filter: sepia(10%);
+  }
+}

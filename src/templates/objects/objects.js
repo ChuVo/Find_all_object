@@ -26,6 +26,10 @@ const objects = [
 const container = document.getElementById('box'),
       box = document.querySelector('.object__box');
 
+const lightInterval = setInterval(() => {
+  highlightObject();
+}, 15000);
+
 addObjects();
 
 function addObjects() {
@@ -41,7 +45,7 @@ function addObjects() {
     div.append(img);
     div.className = 'object filter';   
     div.addEventListener('click', onClickObject, false);
-
+    
     clone.id = i.id + '_clone';
     clone.append(images);
     clone.className = `object filter ${i.id}`;
@@ -49,6 +53,8 @@ function addObjects() {
     box.append(clone);
     container.append(div);
     addTitleList(i);
+
+    lightInterval;
   });
 };
 
@@ -59,6 +65,7 @@ function onClickObject() {
   this.removeEventListener('click', onClickObject, false);
   count++;
   if (count === 4) {
+    clearTimeout(lightInterval);
     victory();
   }
 };
@@ -103,4 +110,19 @@ function victory() {
     win.style.display = 'flex';
     playSound('music','score');
   }, 4000 );  
+};
+
+function highlightObject() {
+  const objects = document.querySelectorAll('#box > .filter'),
+        objectsFound = document.querySelectorAll('#box > .object'),
+        object = objects[0];
+
+  objectsFound.forEach((i) => {
+    if( i.classList.contains('light')) {
+      i.classList.remove('light');
+    }
+  });
+  console.log('lightInterval');
+
+  setTimeout(() => object.classList.add('light'), 14700);
 }

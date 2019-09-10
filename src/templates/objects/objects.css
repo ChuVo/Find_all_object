@@ -33,6 +33,11 @@
   filter: brightness(90%);
 }
 
+.light {
+  filter: sepia(0%);
+  animation: light .3s linear infinite alternate;
+}
+
 #balerina,
 .balerina {
   left: 54.5%; 

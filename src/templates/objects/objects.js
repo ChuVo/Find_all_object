@@ -44,17 +44,16 @@ function addObjects() {
     div.id = i.id;
     div.append(img);
     div.className = 'object filter';   
-    div.addEventListener('click', onClickObject, false);
+    clone.addEventListener('click', onClickObject, false);//div
     
     clone.id = i.id + '_clone';
     clone.append(images);
-    clone.className = `object filter ${i.id}`;
-    
-    box.append(clone);
-    container.append(div);
-    addTitleList(i);
+    clone.className = `object object_clone filter is-opacity ${i.id}`;
 
     lightInterval;
+    box.append(clone);
+    container.append(div);
+    addTitleList(i);    
   });
 };
 
@@ -71,10 +70,11 @@ function onClickObject() {
 };
 
 function showFoundObject(i) {
-  const clone = document.getElementById(i + '_clone');
-
-  recolorTitle(i);
+  const clone = document.getElementById(i);
+  console.log(clone);
+  recolorTitle(i.substr(0, i.length - 6));
   clone.classList.add('found-object');
+  clone.classList.remove('is-opacity');
 
   setTimeout(() => {
     clone.classList.remove('found-object');
@@ -98,6 +98,7 @@ function addTitleList(i) {
 }
 
 function recolorTitle(i) {
+  console.log(i);
   const elem = document.getElementById(`${i}_title`);
 
   elem.classList.add('list__items_found');
@@ -122,7 +123,6 @@ function highlightObject() {
       i.classList.remove('light');
     }
   });
-  console.log('lightInterval');
 
   setTimeout(() => object.classList.add('light'), 14700);
 }

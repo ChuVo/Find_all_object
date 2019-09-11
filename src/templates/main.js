@@ -30,7 +30,6 @@ function playSound(meaning, trackName) {
     player.addEventListener('ended', () => playSound('music', 'Caribbean Blue'));
   }
 
-  player.play();
   player.autoplay = 'autoplay';        
   sound.innerHTML = '';
   sound.append(player);  

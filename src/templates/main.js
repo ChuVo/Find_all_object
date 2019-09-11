@@ -1,13 +1,16 @@
-const spiner = document.querySelector('.spiner'),
-      tutorial = document.querySelector('.tutorial');  
+const bg = document.querySelector('.bg'),
+      spiner = document.querySelector('.spiner'),
+      content = document.querySelector('.content'),      
+      tutorial = document.querySelector('.tutorial');
 
-document.body.onload = () => {
-  hideSpiner();  
+document.body.onload = () => {  
+  playSound('music', 'Caribbean Blue');
+  hideSpiner();
+  bg.classList.remove('bg_blur');
+  content.classList.remove('bg_blur');
 };
 
-playSound('music', 'Caribbean Blue');
-
-function hideSpiner() {
+function hideSpiner() {  
   spiner.classList.add('is-hidden');
   hideTutorial();
 };

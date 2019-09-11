@@ -24,11 +24,10 @@ const objects = [
   }
 ];
 const container = document.getElementById('box'),
-      box = document.querySelector('.object__box');
-
-const lightInterval = setInterval(() => {
-  highlightObject();
-}, 15000);
+      box = document.querySelector('.object__box'),
+      lightInterval = setInterval(() => {
+        highlightObject();
+      }, 5000);
 
 addObjects();
 
@@ -58,9 +57,10 @@ function addObjects() {
 };
 
 function onClickObject() {
+  const object = document.getElementById(this.id.substr(0, this.id.length - 6));
   playSound('sound', 'bell');
   showFoundObject(this.id);
-  this.classList.remove('filter');
+  object.classList.remove('filter');
   this.removeEventListener('click', onClickObject, false);
   count++;
   if (count === 4) {
@@ -71,10 +71,10 @@ function onClickObject() {
 
 function showFoundObject(i) {
   const clone = document.getElementById(i);
-  console.log(clone);
   recolorTitle(i.substr(0, i.length - 6));
   clone.classList.add('found-object');
   clone.classList.remove('is-opacity');
+  console.log(clone);
 
   setTimeout(() => {
     clone.classList.remove('found-object');
@@ -98,7 +98,6 @@ function addTitleList(i) {
 }
 
 function recolorTitle(i) {
-  console.log(i);
   const elem = document.getElementById(`${i}_title`);
 
   elem.classList.add('list__items_found');
@@ -124,5 +123,5 @@ function highlightObject() {
     }
   });
 
-  setTimeout(() => object.classList.add('light'), 14700);
+  setTimeout(() => object.classList.add('light'), 4700);
 }

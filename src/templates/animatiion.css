@@ -15,3 +15,9 @@
     filter: sepia(10%);
   }
 }
+
+@keyframes spin {
+  from{
+    transform: rotate(360deg);
+  }
+}

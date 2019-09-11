@@ -26,6 +26,10 @@ const objects = [
 const container = document.getElementById('box'),
       box = document.querySelector('.object__box');
 
+const lightInterval = setInterval(() => {
+  highlightObject();
+}, 15000);
+
 addObjects();
 
 function addObjects() {
@@ -40,15 +44,16 @@ function addObjects() {
     div.id = i.id;
     div.append(img);
     div.className = 'object filter';   
-    div.addEventListener('click', onClickObject, false);
-
+    clone.addEventListener('click', onClickObject, false);//div
+    
     clone.id = i.id + '_clone';
     clone.append(images);
-    clone.className = `object filter ${i.id}`;
-    
+    clone.className = `object object_clone filter is-opacity ${i.id}`;
+
+    lightInterval;
     box.append(clone);
     container.append(div);
-    addTitleList(i);
+    addTitleList(i);    
   });
 };
 
@@ -59,15 +64,17 @@ function onClickObject() {
   this.removeEventListener('click', onClickObject, false);
   count++;
   if (count === 4) {
+    clearTimeout(lightInterval);
     victory();
   }
 };
 
 function showFoundObject(i) {
-  const clone = document.getElementById(i + '_clone');
-
-  recolorTitle(i);
+  const clone = document.getElementById(i);
+  console.log(clone);
+  recolorTitle(i.substr(0, i.length - 6));
   clone.classList.add('found-object');
+  clone.classList.remove('is-opacity');
 
   setTimeout(() => {
     clone.classList.remove('found-object');
@@ -91,6 +98,7 @@ function addTitleList(i) {
 }
 
 function recolorTitle(i) {
+  console.log(i);
   const elem = document.getElementById(`${i}_title`);
 
   elem.classList.add('list__items_found');
@@ -103,4 +111,18 @@ function victory() {
     win.style.display = 'flex';
     playSound('music','score');
   }, 4000 );  
+};
+
+function highlightObject() {
+  const objects = document.querySelectorAll('#box > .filter'),
+        objectsFound = document.querySelectorAll('#box > .object'),
+        object = objects[0];
+
+  objectsFound.forEach((i) => {
+    if( i.classList.contains('light')) {
+      i.classList.remove('light');
+    }
+  });
+
+  setTimeout(() => object.classList.add('light'), 14700);
 }

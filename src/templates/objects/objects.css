@@ -85,7 +85,7 @@
 #fan,
 .fan {
   right: 26%;
-  top: 10%;
+  top: 12%;
   transform: rotate(-34deg);
   filter: brightness(67%);  
 }
@@ -100,7 +100,7 @@
 #bird,
 .bird {
   right: 42%;
-  top: 23%;
+  top: 25%;
   transform: rotateY(193deg) scale(.4);
   filter: brightness(60%);
 }
@@ -114,7 +114,7 @@
 #basket,
 .basket {
   left: 57%;
-  top: 80%; 
+  top: 78%; 
 }
 
 #card,
@@ -127,7 +127,7 @@
 #apple,
 .apple {
   left: 52%;
-  top: 75%;
+  top: 74%;
   transform: scale(.6);
 }
 

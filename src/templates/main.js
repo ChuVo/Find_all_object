@@ -1,4 +1,5 @@
-let count = null;
+let count = null,
+    level = 0;
 
 const bg = document.querySelector('.bg'),
       box = document.querySelector('.object__box'),
@@ -7,29 +8,6 @@ const bg = document.querySelector('.bg'),
       content = document.querySelector('.content'),
       tutorial = document.querySelector('.tutorial'),         
       container = document.getElementById('box');
-
-const objects = [
-  {
-    id: 'mirror',
-    title: 'Mirror',
-    src: 'images/mirror.png'
-  },
-  {
-    id: 'balerina',
-    title: "Ballet Danser",
-    src: "images/balerina.png"
-  },
-  {
-    id: 'perfume',
-    title: "Perfume",
-    src: "images/perfume.png"
-  },
-  {
-    id: 'comb',
-    title: "Comb",
-    src: "images/comb.png"
-  }
-];
 
 const lightInterval = setInterval(() => {
         highlightObject();
@@ -45,13 +23,12 @@ document.body.onload = () => {
 
 class Game {
   constructor() {
-    this.level = 1;
     this.count = 0;
     this.runing = false;
   }
 
   createObjects() {
-    objects.forEach((i) => {
+    objects[level].forEach((i) => {
       const img = document.createElement('img'),
             images = document.createElement('img'),//added because append does not work with copy
             div = document.createElement('div'),
@@ -87,6 +64,14 @@ class Game {
     this.createObjects();
   };
 
+  levelUp() {
+    ++level;
+
+    if(level > 3) {
+      level = 0;
+    }
+  };
+
   onClickObject() {
     const object = document.getElementById(this.id.substr(0, this.id.length - 6));
   
@@ -112,8 +97,9 @@ class Game {
 function gameStart() { 
   const game = new Game;
   
-  game.addedPlace();
+  game.addedPlace();  
   hideTutorial();
+  game.levelUp();
 }
 
 function hideSpiner() {  
@@ -130,7 +116,7 @@ function showTutorial() {
   tutorial.classList.add('is-opacity');  
 };
 
-function showFoundObject(i, count) {
+function showFoundObject(i) {
   const clone = document.getElementById(i);
   recolorTitle(i.substr(0, i.length - 6));
   clone.classList.add('object_found');

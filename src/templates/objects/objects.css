@@ -75,6 +75,58 @@
   transform: rotate(30deg) scale(.6);
 }
 
+#shoe,
+.shoe {
+  left: 54%; 
+  top: 49%;  
+}
+
+#fan,
+.fan {
+  left: 23%;
+  top: 41%;  
+}
+
+#book,
+.book {
+  left: 27%;
+  top: 62%;
+  transform: rotate(15deg);
+}
+
+#bird,
+.bird {
+  right: 9%;
+  top: 44%;
+  transform: rotate(30deg) scale(.6);
+}
+
+#purse,
+.purse {
+  left: 54%; 
+  top: 49%;  
+}
+
+#basket,
+.basket {
+  left: 23%;
+  top: 41%;  
+}
+
+#card,
+.card {
+  left: 27%;
+  top: 62%;
+  transform: rotate(15deg);
+}
+
+#apple,
+.apple {
+  right: 9%;
+  top: 44%;
+  transform: rotate(30deg) scale(.6);
+}
+
 .object_clone {
   z-index: 9;
 }

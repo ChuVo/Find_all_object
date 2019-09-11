@@ -1,7 +1,7 @@
 {
   "balerina": {
     "id": "balerina",
-    "src": "images/appel.png"
+    "src": "images/balerina.png"
   },
 
   "mirror": {
@@ -17,5 +17,10 @@
   "comb": {
     "id": "comb",
     "src": "images/comb.png"
-  }  
+  },
+  
+  "basket": {
+    "id": "basket",
+    "src": "images/basket.png"
+  }
 }

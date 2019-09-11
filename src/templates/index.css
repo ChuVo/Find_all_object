@@ -25,16 +25,12 @@ h1 {
   font-size: 2.5rem;
 }
 
-.is-hidden {
-  display:none;
-}
-
 .is-opacity {
   opacity: 0;
 }
 
 .bg {
-  background: url(../images/bg.png) center;
+  background: url(../images/bg.jpg) center;
   background-size: cover;
   position: absolute;
   left: 0;
@@ -53,11 +49,90 @@ h1 {
   width: 100%;
 }
 
+.win {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.win__logo {
+  animation-name: flicker, pulse;
+  animation-duration: 2s, 1.5s;
+  animation-timing-function: ease-in, ease-out;
+  animation-iteration-count: infinite, infinite;
+  animation-direction: alternate,alternate;
+  width: 50%;
+  z-index: 9999;
+}
+
+.win__btn_pf {
+  align-items: center;
+  color: #460000;
+  cursor: pointer;
+  display: flex;  
+  justify-content: center;
+  background: none;
+  border: none;
+  font-family: FrizQuadrata, sans-serif;
+  font-size: 2.5rem;
+  position: relative;
+  text-decoration: none;
+  transition: .3s;
+  width: 30%;
+  margin-bottom: 4%;
+  z-index: 99;
+}
+
+.win__btn_pf:hover {
+  filter: saturate(300%);
+  transform: scale(1.005);
+}
+
+.win__btn-pf_position {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
+.win__btn-google {
+  z-index: 99999;
+  width: 15%;
+}
+
 .spiner {
+  /* background: url(../images/bg.jpg) center; */
+  background-size: cover;
+  display: flex;
+  align-items: center;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+}
+
+.spiner__el{
+  animation: spin 1s linear infinite reverse;
+  border: 5px solid rgb(245, 104, 104);
+  border-top: none;
+  border-radius: 50%;
+  height: 250px;
+  margin: 0 auto;
+  width: 250px;
+  z-index: 999;
+}
+
+.is-hidden {
+  display:none;
 }
 
 @media only screen  and (min-device-width : 320px) and (max-device-width : 1024px)  and (orientation : portrait) {
@@ -121,4 +196,3 @@ h1 {
     font-size: 1rem;
   }
 }
-

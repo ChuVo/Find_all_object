@@ -15,13 +15,15 @@
   <title>Find all hidden object</title>
 </head>
 <body>
-  {{> spiner}}
-  <div class="content">
-    <div class="bg"></div>
-    {{> objects}}
+  <div class="bg bg_blur"></div>  
+  <div class="content bg_blur">    
+    <div class="objects" id="box"></div>
     {{> gui}}    
-    {{> win}}
-  </div>  
+    <div class="win is-hidden"></div>
+  </div>
+  <div class="spiner">
+    <div class="spiner__el"></div>
+  </div>
   <div class="sound-box">
     <div class="sound"></div>
     <div class="music"></div>

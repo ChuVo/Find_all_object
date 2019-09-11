@@ -17,11 +17,13 @@
 <body>
   <div class="bg bg_blur"></div>  
   <div class="content bg_blur">    
-    {{> objects}}
+    <div class="objects" id="box"></div>
     {{> gui}}    
-    {{> win}}    
+    <div class="win is-hidden"></div>
   </div>
-  {{> spiner}}  
+  <div class="spiner">
+    <div class="spiner__el"></div>
+  </div>
   <div class="sound-box">
     <div class="sound"></div>
     <div class="music"></div>

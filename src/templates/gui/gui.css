@@ -16,6 +16,7 @@
   text-align: center;
   transition: .3s;
   width: 30%;
+  z-index: 5;
 }
 
 .tutorial__bg {
@@ -40,6 +41,7 @@
   margin: 0 auto;
   position: relative;
   width: 70%;
+  z-index: 9;
 }
 
 .list__bg-wrapper {

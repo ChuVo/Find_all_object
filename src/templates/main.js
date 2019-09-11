@@ -17,8 +17,6 @@ document.body.onload = () => {
   playSound('music', 'Caribbean Blue'); 
   gameStart();
   hideSpiner();
-  bg.classList.remove('bg_blur');
-  content.classList.remove('bg_blur');
 };
 
 class Game {
@@ -67,7 +65,7 @@ class Game {
   levelUp() {
     ++level;
 
-    if(level > 3) {
+    if(level === 3) {
       level = 0;
     }
   };
@@ -98,6 +96,8 @@ function gameStart() {
   const game = new Game;
   
   game.addedPlace();  
+  bg.classList.remove('bg_blur');
+  content.classList.remove('bg_blur');
   hideTutorial();
   game.levelUp();
 }
@@ -206,11 +206,13 @@ function createdWin() {
   box.innerHTML = html;
 };
 
-function gameStop() {
-  showTutorial();
-  container.innerHTML = '';
+function gameStop() {    
   list.innerHTML = '';
-  playSound('music', 'Caribbean Blue');  
+  container.innerHTML = '';
+  bg.classList.add('bg_blur');
+  content.classList.add('bg_blur');
+  playSound('music', 'Caribbean Blue'); 
+  showTutorial();
   win.style.display = '';
   count = 0;
   gameStart();

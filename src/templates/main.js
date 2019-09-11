@@ -216,6 +216,4 @@ function gameStop() {
   win.style.display = '';
   count = 0;
   gameStart();
-
-  console.log('stop');
 }

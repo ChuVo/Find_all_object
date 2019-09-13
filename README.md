@@ -18,3 +18,7 @@ You must have installed: node, npm, gulp.
 4. `refresh page`
 
 ## Used
+
+`gulp build` - create product folder
+`gulp build` - create product folder and run to work
+`gulp clean-build` -delete folder build from project

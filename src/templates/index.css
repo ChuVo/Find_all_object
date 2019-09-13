@@ -154,8 +154,8 @@ h1 {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (orientation: portrait) {
   .content {
-    right: 35%;
-    top: 4%;
+    right: 33%;
+    top: 5%;
     height: calc(100vw - 10%);
   }
 }

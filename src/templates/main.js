@@ -14,7 +14,7 @@ const lightInterval = setInterval(() => {
       }, 5000);
 
 document.body.onload = () => {
-  playSound('music', 'Caribbean Blue'); 
+  // playSound('music', 'Caribbean Blue'); 
   gameStart();
   hideSpiner();
 };

@@ -15,7 +15,6 @@ You must have installed: node, npm, gulp.
 1. `git clone https://github.com/ChuVo/Find_all_object.git`
 2. `cd Find_all_object`
 3. `gulp dev`
-4. `copy folder media to build`
-5. `refresh page`
+4. `refresh page`
 
 ## Used

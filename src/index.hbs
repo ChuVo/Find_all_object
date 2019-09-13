@@ -9,16 +9,16 @@
   <meta property="og:url" content="http://crazysouslik.pro/"/>
   <meta property="og:image"content="../images/CrazySouslik.png"/>
   <meta property="og:image:width" content="600"/>
-  <meta property="og:image:height" content="300"/>  
+  <meta property="og:image:height" content="300"/>
   <link rel="stylesheet" href="styles/index.min.css">
   <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
   <title>Find all hidden object</title>
 </head>
-<body>  
+<body>
   <div class="content bg_blur">
-    <div class="bg bg_blur"></div>      
+    {{> bg}}
     <div class="objects" id="box"></div>
-    {{> gui}}    
+    {{> gui}}
     <div class="win is-hidden"></div>
   </div>
   <div class="spiner">
@@ -27,7 +27,7 @@
   <div class="sound-box">
     <div class="sound"></div>
     <div class="music"></div>
-  </div>  
+  </div>
   <script type="text/javascript" src="scripts/index.min.js"></script>
 </body>
 </html>

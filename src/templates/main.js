@@ -3,7 +3,7 @@ let count = null,
 
 const bg = document.querySelector('.bg'),
       box = document.querySelector('.object__box'),
-      win = document.querySelector('.win'),
+      win = document.querySelector('.win'),     
       list = document.querySelector('.list__items'),
       content = document.querySelector('.content'),
       tutorial = document.querySelector('.tutorial'),         
@@ -13,6 +13,7 @@ const lightInterval = setInterval(() => {
         highlightObject();
       }, 5000);
 
+// fix100vh();
 document.body.onload = () => {
   playSound('music', 'Caribbean Blue'); 
   gameStart();
@@ -216,4 +217,4 @@ function gameStop() {
   win.style.display = '';
   count = 0;
   gameStart();
-}
+};

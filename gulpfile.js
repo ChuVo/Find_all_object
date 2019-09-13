@@ -10,20 +10,20 @@ const env = require( 'gulp-env' ),
       nested = require( 'postcss-nested' ),
       assets = require( 'postcss-assets' ),
       rename = require( 'gulp-rename' ),
+      eslint = require( 'gulp-eslint' ),
       postcss = require( 'gulp-postcss' ),
       cssnano = require( 'gulp-cssnano' ),
+      imagemin = require( 'gulp-imagemin' ),
+      reporter = require( 'postcss-reporter' ),
+      stylelint = require( 'stylelint' ),
       handlebars = require( 'gulp-compile-handlebars' ),
       sourcemaps = require( 'gulp-sourcemaps' ),
       browserSync = require( 'browser-sync' ).create(),
-      autoprefixer = require( 'autoprefixer' ), 
+      rulesStyles = require( './stylelint-rules.json' ),
+      autoprefixer = require( 'autoprefixer' ),
       postcssPresetEnv = require( 'postcss-preset-env' ),
       templateContext = require( './src/db.json' ),
-      rulesScripts = require( './eslint-rules.json' ),
-      eslint = require( 'gulp-eslint' ),
-      stylelint = require( 'stylelint' ),
-      reporter = require( 'postcss-reporter' ),
-      rulesStyles = require( './stylelint-rules.json' ),
-      imagemin = require( 'gulp-imagemin' );
+      rulesScripts = require( './eslint-rules.json' );
 
 const paths = {
     src: {
@@ -31,14 +31,16 @@ const paths = {
       styles: './src/templates/**/*.css',
       scripts: './src/templates/**/*.js',
       fonts: './src/fonts/**/*',
-      images: './src/images/**/*'
+      images: './src/images/**/*',
+      media: './src/media/**/*'
     },
     build: {
       dir: 'build/',
       styles: 'build/styles',
       scripts: 'build/scripts',
       fonts: 'build/fonts',
-      images: 'build/images'
+      images: 'build/images',
+      media: 'build/media'
     },
     buildNames: {
       styles: 'index.min.css',
@@ -70,7 +72,7 @@ gulp.task( 'compile', () => {
           point: (str) => str.split('').join('.'),
         }
       };
-      
+
     gulp.src( `${ paths.src.dir }/index.hbs` )
         .pipe(handlebars(templateContext, options))
         .pipe(rename('index.html'))
@@ -156,7 +158,7 @@ gulp.task( 'browserSync', () => {
   gulp.task( 'css-watch', [ 'build-css' ], () => browserSync.reload() );
   gulp.task( 'compile-watch', ['compile'], () => browserSync.reload() );
 
-gulp.task( 'watch', () => {  
+gulp.task( 'watch', () => {
   gulp.watch( paths.contextJson )
     .on( 'change', browserSync.reload );
   gulp.watch( `${paths.build.dir}/**/*` )
@@ -166,6 +168,11 @@ gulp.task( 'watch', () => {
 gulp.task( 'build-fonts', () => {
   gulp.src( paths.src.fonts )
     .pipe( gulp.dest( paths.build.fonts ));
+});
+
+gulp.task( 'build-media', () => {
+  gulp.src( paths.src.media )
+    .pipe( gulp.dest( paths.build.media ));
 });
 
 gulp.task( 'build-images', () =>
@@ -179,7 +186,7 @@ gulp.task('clean-build', () => {
     .pipe(clean());
 });
 
-gulp.task( 'build', [ 'build-js', 'build-css', 'build-fonts', 'build-images', 'compile'] );
+gulp.task( 'build', ['build-js', 'build-css', 'build-media', 'build-fonts', 'build-images', 'compile'] );
 
 gulp.task( 'default', ['build'] );
 gulp.task( 'dev', ['build', 'browserSync'] );

@@ -1,7 +1,4 @@
-﻿/* usied color */
-/* text-color: #460000 */
-
-* {
+﻿* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,10 +7,10 @@
 
 body {
   font-family: 'FrizQuadrata', sans-serif;
-  color: #460000;
   height: 100vh;
+  color: #460000;
   overflow: hidden;
-  width: 100vw;
+  width: 100%;
 }
 
 img {
@@ -21,7 +18,7 @@ img {
 }
 
 h1 {
-  text-transform: uppercase; 
+  text-transform: uppercase;
   font-size: 2.5rem;
 }
 
@@ -29,24 +26,24 @@ h1 {
   opacity: 0;
 }
 
+.content {
+  height: 100%;
+  overflow: hidden;
+  transition: .5s;
+  width: 100%;
+}
+
 .bg {
   background: url(../images/bg.jpg) center;
   background-size: cover;
   position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 }
 
 .bg_blur {
   filter: blur(3px);
-}
-
-.content {
-  height: 100%;  
-  padding-top: 1rem;
-  width: 100%;
 }
 
 .win {
@@ -76,7 +73,7 @@ h1 {
   align-items: center;
   color: #460000;
   cursor: pointer;
-  display: flex;  
+  display: flex;
   justify-content: center;
   background: none;
   border: none;
@@ -102,13 +99,11 @@ h1 {
 }
 
 .win__btn-google {
-  z-index: 99999;
+  z-index: 999;
   width: 15%;
 }
 
 .spiner {
-  /* background: url(../images/bg.jpg) center; */
-  background-size: cover;
   display: flex;
   align-items: center;
   position: absolute;
@@ -135,47 +130,47 @@ h1 {
   display:none;
 }
 
-@media only screen  and (min-device-width : 320px) and (max-device-width : 1024px)  and (orientation : portrait) {
+@media only screen  and (min-device-width: 320px) and (max-device-width: 1024px)  and (orientation: portrait) {
   .content {
     height: 100vw;
     position: relative;
     right: 39%;
-    top: 50%;
+    transform: rotate(90deg);
     width: 100vh;
   }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .content {
-    right: 17%;
-    transform: translate(.2%,-50%) rotate(90deg);
+    right: 16.7%;
+    top: 12.5%;
   }
 }
 
-@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait) {
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .content {
-    transform: translateY(-50%) rotate(90deg);
+    top: 21.9%;
   }
 }
 
-@media only screen and (device-width : 375px) and (device-height : 667px) and (-webkit-device-pixel-ratio : 2) {
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (orientation: portrait) {
   .content {
-    right: 39%;
-    transform: translate(.2%,-50%) rotate(90deg);
+    top: 21.9%;
   }
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 666px) and (orientation : portrait) {
-  .content {    
-    right: 39%;
-    transform: translateY(-50%) rotate(90deg);
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .content {
+    right: 58.5%;
+    top: 27%;
   }
 }
 
-@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) {
+@media only screen and (device-width: 411px) and (device-height: 823px) and (orientation: portrait) {
   .content {
-    right: 59%;
-    transform: translate(.3%,-50%) rotate(90deg);
+    right: 50.2%;
+    top: 25%;
   }
 }
 

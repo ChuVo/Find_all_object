@@ -10,7 +10,7 @@ body {
   height: 100vh;
   color: #460000;
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
 }
 
 img {
@@ -134,7 +134,7 @@ h1 {
   .content {
     height: 100vw;
     position: relative;
-    /* right: 39%; */
+    right: 39%;
     transform: rotate(90deg);
     width: 100vh;
   }

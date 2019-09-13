@@ -134,12 +134,13 @@ h1 {
   .content {
     height: 100vw;
     position: relative;
+    right: 39%;
     transform: rotate(90deg);
     width: 100vh;
   }
 }
 
-/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   .content {
     right: 16.7%;
     top: 12.5%;
@@ -150,16 +151,16 @@ h1 {
   .content {
     top: 21.9%;
   }
-}*/
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (orientation: portrait) {
   .content {
     right: 33%;
-    top: 5%;
-    height: calc(100vw - 10%);
+    top: 22%;
+    width: 90vh;
   }
 }
-/*
+
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .content {
     right: 58.5%;
@@ -172,7 +173,7 @@ h1 {
     right: 50.2%;
     top: 25%;
   }
-} */
+}
 
 @media (max-width: 1024px) {
   h1 {

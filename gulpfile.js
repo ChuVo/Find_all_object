@@ -32,7 +32,7 @@ const paths = {
       scripts: './src/templates/**/*.js',
       fonts: './src/fonts/**/*',
       images: './src/images/**/*',
-      media: '.srs/media/**/*'
+      media: './src/media/**/*'
     },
     build: {
       dir: 'build/',
@@ -186,7 +186,7 @@ gulp.task('clean-build', () => {
     .pipe(clean());
 });
 
-gulp.task( 'build', [ 'build-js', 'build-css', 'build-fonts', 'build-media', 'build-images', 'compile'] );
+gulp.task( 'build', ['build-js', 'build-css', 'build-media', 'build-fonts', 'build-images', 'compile'] );
 
 gulp.task( 'default', ['build'] );
 gulp.task( 'dev', ['build', 'browserSync'] );

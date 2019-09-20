@@ -25,11 +25,22 @@ class Game {
     this.count = 0;
     this.runing = false;
   }
+  
+  addedPlace() {
+    const bg = document.createElement('div'),
+          div = document.createElement('div'); 
+    
+    bg.className = 'object__box';    
+    div.className = 'bg_cut';
+    container.append(bg, div);    
+  
+    this.createObjects();
+  }
 
   createObjects() {
     objects[level].forEach((i) => {
       const img = document.createElement('img'),
-            images = document.createElement('img'),//added because append does not work with copy
+            images = document.createElement('img'),
             div = document.createElement('div'),
             clone = document.createElement('div'),
             box = document.querySelector('.object__box');
@@ -52,24 +63,13 @@ class Game {
     });
   }
 
-  addedPlace() {
-    const bg = document.createElement('div'),
-          div = document.createElement('div'); 
-    
-    bg.className = 'object__box';    
-    div.className = 'bg_cut';
-    container.append(bg, div);    
-  
-    this.createObjects();
-  };
-
   levelUp() {
     ++level;
 
     if(level === 3) {
       level = 0;
     }
-  };
+  }
 
   onClickObject() {
     const object = document.getElementById(this.id.substr(0, this.id.length - 6));
@@ -90,7 +90,7 @@ class Game {
       victory();
       playBtn.addEventListener('click', gameStop);
     }
-  };
+  }
 };
 
 function gameStart() { 

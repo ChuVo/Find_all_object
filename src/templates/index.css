@@ -10,7 +10,7 @@ body {
   height: 100vh;
   color: #460000;
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
 }
 
 img {
@@ -130,7 +130,7 @@ h1 {
   display:none;
 }
 
-@media only screen  and (min-device-width: 320px) and (max-device-width: 1024px)  and (orientation: portrait) {
+@media only screen  and (min-device-width: 320px) and (max-device-width: 1024px) and (orientation: portrait) {
   .content {
     height: 100vw;
     position: relative;
@@ -153,10 +153,11 @@ h1 {
   }
 }
 
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 667px) and (orientation: portrait) {
   .content {
-    top: 21.9%;
+    right: 32%;
+    top: 22%;
+    width: 100vh;
   }
 }
 

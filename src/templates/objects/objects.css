@@ -168,7 +168,7 @@
   }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1366px) and (orientation : landscape) {
+@media only screen and (min-device-width : 768px) and (max-device-width : 1280px) and (orientation : landscape) {
   #mirror,
   .mirror {
     left: 15%;

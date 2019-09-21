@@ -2,7 +2,7 @@
 
 .objects {
   position: absolute;
-  top: 0;
+  top: -200%;
   left: 0;
   height: 100%;
   width: 100%; 

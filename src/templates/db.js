@@ -3,7 +3,9 @@ const objects = [
     {
       id: 'mirror',
       title: 'Mirror',
-      src: 'images/mirror.png'
+      src: 'images/mirror.png',
+      x: .35,
+      y: .3
     },
     {
       id: 'balerina',

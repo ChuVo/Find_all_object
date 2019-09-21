@@ -8,8 +8,13 @@
 			height = box.clientHeight;
 
 	addBg();
-	addMirror();
-	window.addEventListener('resize', addBg);
+	window.addEventListener('resize', getSizeScreen);
+	window.addEventListener('resize', addBg);	
+
+	function getSizeScreen(){
+		width = box.clientWidth,
+		height = box.clientHeight;
+	}
 
 	function addBg() {
 		bg_can.width = width;
@@ -22,23 +27,42 @@
 		imgBg.src = bgBase64;		
 	};
 
-	function addMirror() {
-		const mirror = document.getElementById('mirror_canvas'),
-				context = mirror.getContext('2d'),
-				imgMirror = new Image();
+	function createCanvas(i) {
+		const canvas = document.createElement('canvas');
+		const bg = document.getElementById('bg');
 
-		mirror.width = width * .06;
-		mirror.height = height * .17;
+		canvas.id = i + '_canvas';
+		canvas.setAttribute('display', 'block');
+		canvas.innerHTML = 'Your browser is not supported!';
+		bg.after(canvas);
+	}
 
+	function addObject(i, x, y) {
+		createCanvas(i);
 
-		imgMirror.onload = () => {
-			context.drawImage(imgMirror, 0, 0, width * .06, height * .17);
+		const el = document.getElementById(i + '_canvas'),
+		 			context = el.getContext('2d'),
+					img = new Image();			
+
+		el.width = width * .06;
+		el.height = width * .08;
+		el.classList.add(i+'_c','object_c');
+
+		img.onload = () => {
+			context.drawImage(img, 0, 0, el.width , el.height);
 		}
 
-		imgMirror.src = 'images/mirror.png';
-	}
-	
+		img.src = `images/${i}.png`;
+	};
 
+	addObjects_c();
+
+	function addObjects_c() {
+		console.log(objects[2]);
+		objects[level].forEach((i) => {
+			addObject(i.id);
+		});
+	};
 
 }());
 

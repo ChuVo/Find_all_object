@@ -1,0 +1,26 @@
+.object_c {
+  position: absolute;
+}
+
+.mirror_c {
+  top: 32%;
+  left: 19%;
+}
+
+.balerina_c {
+  top: 39%;
+  left: 51%;
+  transform: scale(1.2);
+}
+
+.perfume_c {
+  top: 58%;
+  left: 27%;
+  transform: rotate(10deg)  scale(.8);
+}
+
+.comb_c {
+  transform: rotate(20deg) scale(.6);
+  top: 43%;
+  right: 9%;
+}

@@ -59,7 +59,7 @@ class Game {
     div.className = 'bg_cut';
     container.append(bg, div);    
   
-    this.createObjects();
+    // this.createObjects();
   };
 
   levelUp() {

@@ -1,26 +1,54 @@
+/**
+  h = height (% from height)
+  r = rotate (Math.PI/180)/100
+  w = width (% from width)
+  x = position X (% from width)
+  y = position Y (% from height)
+**/
+
 const objects = [
   [
     {
       id: 'mirror',
       title: 'Mirror',
       src: 'images/mirror.png',
-      x: .35,
-      y: .3
+      h: 0.08,
+      s: 1,
+      w: 0.06,
+      x: .19,
+      y: .34      
     },
     {
       id: 'balerina',
       title: 'Ballet Danser',
-      src: 'images/balerina.png'
+      src: 'images/balerina.png',
+      h: 0.1,
+      s: 1,
+      w: 0.06,
+      x: .51,
+      y: .375
     },
     {
       id: 'perfume',
       title: "Perfume",
-      src: 'images/perfume.png'
+      src: 'images/perfume.png',
+      h: 0.06,
+      s: 1,
+      r: 0.3,
+      w: 0.045,
+      x: .28,
+      y: .61
     },
     {
       id: 'comb',
       title: 'Comb',
-      src: 'images/comb.png'
+      src: 'images/comb.png',
+      h: 0.035,
+      r: 0.2,
+      s: 1,
+      w: 0.035,
+      x: .87,
+      y: .455
     }
   ],
   [

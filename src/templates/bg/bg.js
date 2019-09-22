@@ -7,13 +7,15 @@
 			width = box.clientWidth,
 			height = box.clientHeight;
 
-	addBg();
+	getSizeScreen();
+	addObjects();
 	window.addEventListener('resize', getSizeScreen);
-	window.addEventListener('resize', addBg);	
 
 	function getSizeScreen(){
-		width = box.clientWidth,
+		width = box.clientWidth;
 		height = box.clientHeight;
+
+		addBg();		
 	}
 
 	function addBg() {
@@ -24,45 +26,59 @@
 			ctx.drawImage(imgBg, 0, 0, bg_can.width, bg_can.height);
 		};
 
-		imgBg.src = bgBase64;		
+		imgBg.src = bgBase64;			
 	};
 
-	function createCanvas(i) {
+	function addObjects() {
+		objects[level].forEach((i) => {			
+			addObject(i);	
+		});
+	};
+	
+	function addObject(i) {
+		createCanvas(i.id);
+		getCanvasCoordinates(i);
+
+		const img = new Image(),
+					el = document.getElementById(i.id),
+					context = el.getContext('2d');
+
+		el.height = width * i.h;
+		el.width = width * i.w;
+
+		img.onload = () => {
+			if(i.r) {
+				el.height = width * i.h * 1.2;
+				el.width = width * i.w * 1.5;
+				context.rotate(i.r);
+				context.translate(el.width/3, 0);
+				context.drawImage(img, 0, 0, el.width/1.5, el.height/1.2);
+			} else {
+				context.drawImage(img, 0, 0, el.width, el.height);
+			}			
+		};
+
+		img.src = `images/${i.id}.png`;
+	}
+
+	function createCanvas(id) {
 		const canvas = document.createElement('canvas');
 		const bg = document.getElementById('bg');
 
-		canvas.id = i + '_canvas';
+		canvas.id = id;
 		canvas.setAttribute('display', 'block');
-		canvas.innerHTML = 'Your browser is not supported!';
+		canvas.classList.add(id,'object');
 		bg.after(canvas);
 	}
 
-	function addObject(i, x, y) {
-		createCanvas(i);
+	function getCanvasCoordinates(i) {
+		const	posX = width * i.x,
+					posY = height * i.y,
+					canvas = document.getElementById(i.id);
 
-		const el = document.getElementById(i + '_canvas'),
-		 			context = el.getContext('2d'),
-					img = new Image();			
-
-		el.width = width * .06;
-		el.height = width * .08;
-		el.classList.add(i+'_c','object_c');
-
-		img.onload = () => {
-			context.drawImage(img, 0, 0, el.width , el.height);
-		}
-
-		img.src = `images/${i}.png`;
-	};
-
-	addObjects_c();
-
-	function addObjects_c() {
-		console.log(objects[2]);
-		objects[level].forEach((i) => {
-			addObject(i.id);
-		});
-	};
+		canvas.style.top = `${posY}px`;
+		canvas.style.left = `${posX}px`;
+	}
 
 }());
 
